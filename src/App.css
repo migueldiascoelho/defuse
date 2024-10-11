@@ -1,38 +1,209 @@
-.App {
+/* Dark Mode Variables */
+:root {
+  --background-dark: #0a0a0a;
+  --box-dark: #0d0d0d;
+  --text-dark: white;
+  --input-bg-dark: #20232a;
+  --input-text-dark: #FAFAC6;
+  --feedback-error-dark: #ff6666;
+  --button-bg-dark: #FAFAC6;
+  --button-hover-dark: #dbdb7c;
+  --button-text-dark: black;
+
+  /* Light Mode Variables */
+  --background-light: #f5f5f5;
+  --box-light: #ffffff;
+  --text-light: black;
+  --input-bg-light: #dddddd;
+  --input-text-light: #333333;
+  --feedback-error-light: #ff3333;
+  --button-bg-light: #333333;
+  --button-hover-light: #555555;
+  --button-text-light: white; 
+}
+
+/* Dark Mode */
+.dark {
+  --background-color: var(--background-dark);
+  --box-color: var(--box-dark);
+  --text-color: var(--text-dark);
+  --input-bg-color: var(--input-bg-dark);
+  --input-text-color: var(--input-text-dark);
+  --feedback-error-color: var(--feedback-error-dark);
+  --button-bg-color: var(--button-bg-dark);
+  --button-hover-color: var(--button-hover-dark);
+  --button-text-color: var(--button-text-dark);
+}
+
+/* Light Mode */
+.light {
+  --background-color: var(--box-light);
+  --box-color: var(--box-light);
+  --text-color: var(--text-light);
+  --input-bg-color: var(--input-bg-light);
+  --input-text-color: var(--input-text-light);
+  --feedback-error-color: var(--feedback-error-light);
+  --button-bg-color: var(--button-bg-light);
+  --button-hover-color: var(--button-hover-light);
+  --button-text-color: var(--button-text-light);
+}
+
+/* Global styles */
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+}
+
+.game-container {
   text-align: center;
+  margin: 20px auto;
+  padding: 40px;
+  max-width: 600px;
+  background-color: var(--box-color);
+  border-radius: 15px;
+  color: var(--text-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.pin-input {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px;
+  margin: 0 15px;
+  border: 2px solid var(--input-text-color);
+  border-radius: 8px;
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: var(--button-bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--button-text-color);
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.feedback-message {
+  margin-top: 30px;
+  font-size: 18px;
+  color: var(--feedback-error-color);
+}
+
+/* Styling for previous plays */
+.previous-plays {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.previous-play-item {
+  font-size: 16px;
+  color: var(--input-text-color);
+}
+
+.previous-play-item .feedback {
+  color: var(--feedback-error-color);
+  margin-left: 10px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+
+.submit-button {
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: var(--button-bg-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--button-text-color);
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.feedback-message {
+  margin-top: 30px;
+  font-size: 18px;
+  color: var(--feedback-error-color);
+}
+
+/* Styling for previous plays */
+.previous-plays {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.previous-play-item {
+  font-size: 16px;
+  color: var(--input-text-color);
+}
+
+.previous-play-item .feedback {
+  color: var(--feedback-error-color);
+  margin-left: 10px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.defuse-image {
+  width: 380px;
+  height: auto;  
+  display: block;  
+  margin: 0 auto;  
+  padding-bottom: 40px;
 }
