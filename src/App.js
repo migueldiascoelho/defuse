@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import defuseImage from './defuse.png';
 import defuseWhiteImage from './defuse_white.png';
@@ -12,14 +12,15 @@ const DefuseGame = () => {
   const [digits, setDigits] = useState(['', '', '', '']);
   const [previousPlays, setPreviousPlays] = useState([]);
   const [gameFinished, setGameFinished] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true); // State to track the theme
+  const [isDarkMode, setIsDarkMode] = useState(false);  // Start in light mode by default
   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
 
-
-  React.useEffect(() => {
+  useEffect(() => {
     generateNumber();
-  }, []);
 
+    // Ensure body starts with light mode
+    document.body.classList.add('light');
+  }, []);
 
   const generateNumber = () => {
     const randomDigits = Array.from({ length: 4 }, () => Math.floor(Math.random() * 10)).join('');
@@ -27,7 +28,6 @@ const DefuseGame = () => {
     console.log(`Secret number generated: ${randomDigits}`);
   };
 
-  // Function to check the user's guess and return feedback
   const checkGuess = (guess) => {
     let equals = 0;
     let slashes = 0;
@@ -68,7 +68,6 @@ const DefuseGame = () => {
       setFeedback(`You've guessed the number ${secretNumber} correctly! The world is safe!`);
       setGameFinished(true);
 
-      // Trigger confetti when the user wins
       confetti({
         particleCount: 100,
         spread: 70,
@@ -86,7 +85,6 @@ const DefuseGame = () => {
     inputRefs[0].current.focus();
   };
 
-  // Function to reset the game
   const resetGame = () => {
     setAttempts(0);
     setFeedback('');
@@ -109,7 +107,6 @@ const DefuseGame = () => {
     }
   };
 
-  // Toggle between dark and light mode
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
