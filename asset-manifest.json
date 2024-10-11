@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/defuse/static/css/main.03aec432.css",
-    "main.js": "/defuse/static/js/main.612593cd.js",
+    "main.js": "/defuse/static/js/main.e92e61e8.js",
     "static/js/453.882545b7.chunk.js": "/defuse/static/js/453.882545b7.chunk.js",
     "static/media/defuse_white.png": "/defuse/static/media/defuse_white.4fa2650eec8ad466a60d.png",
     "static/media/defuse.png": "/defuse/static/media/defuse.e86ad51a2e738381071c.png",
     "index.html": "/defuse/index.html",
     "main.03aec432.css.map": "/defuse/static/css/main.03aec432.css.map",
-    "main.612593cd.js.map": "/defuse/static/js/main.612593cd.js.map",
+    "main.e92e61e8.js.map": "/defuse/static/js/main.e92e61e8.js.map",
     "453.882545b7.chunk.js.map": "/defuse/static/js/453.882545b7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03aec432.css",
-    "static/js/main.612593cd.js"
+    "static/js/main.e92e61e8.js"
   ]
 }
